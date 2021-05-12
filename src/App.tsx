@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Switch, Route } from 'react-router-dom';
+import ProdList from './components/ProdList';
+import CardDescription from './components/CardDescription';
+import { Layout } from 'antd';
+
+import 'antd/dist/antd.css';
 import './App.css';
+const { Header, Footer, Content } = Layout;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Layout>
+				<Header className="mainHeader">Product List</Header>
+				<Switch>
+					<Route path="/" exact>
+						<Content>
+							<ProdList />
+						</Content>
+					</Route>
+					<Route path="/product/:id">
+						<Content>
+							<CardDescription />
+						</Content>
+					</Route>
+				</Switch>
+				<Footer>Footer</Footer>
+			</Layout>
+		</div>
+	);
 }
 
 export default App;
