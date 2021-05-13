@@ -1,10 +1,16 @@
 import { ProductsTypes } from './components/interfaces';
+import { ENDPOINT } from './constants';
 
-const getData = async (url: string) => {
-	const res = await fetch(url).then((res) => {
+export const getData = async () => {
+	const res = await fetch(ENDPOINT).then((res) => {
 		return res.json() as Promise<ProductsTypes[]>;
 	});
 	return res;
 };
 
-export default getData;
+export const getProduct = async (id: string) => {
+	const res = await fetch(`${ENDPOINT}/product/${id}`).then((res) => {
+		return res.json() as Promise<ProductsTypes>;
+	});
+	return res;
+};

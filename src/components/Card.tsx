@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Badge } from 'antd';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import { ProductsTypes } from './interfaces';
 
@@ -11,9 +11,8 @@ const CardProduct = (props: { products: ProductsTypes }) => {
 
 	const handleSelectedItem = (id: number) => {
 		history.push(`/product/${id}`);
-		console.log('event', id);
-
 	};
+
 	return (
 		<Badge.Ribbon text={`${props.products.price} dkk`}>
 			<Card

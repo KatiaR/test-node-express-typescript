@@ -12,7 +12,7 @@ function App() {
 	return (
 		<div className="App">
 			<Layout>
-				<Header className="mainHeader">Product List</Header>
+				<Header className="mainHeader">HEADER</Header>
 				<Switch>
 					<Route path="/" exact>
 						<Content>
@@ -25,7 +25,7 @@ function App() {
 						</Content>
 					</Route>
 				</Switch>
-				<Footer>Footer</Footer>
+				<Footer>FOOTER</Footer>
 			</Layout>
 		</div>
 	);
